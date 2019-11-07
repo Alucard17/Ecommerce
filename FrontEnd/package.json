@@ -3,11 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "add": "^2.0.6",
     "bootstrap": "^4.3.1",
+    "bootstrap-sass": "^3.4.1",
+    "font-awesome": "^4.7.0",
+    "formik": "^2.0.3",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
+    "react-bootstrap-table-next": "^3.2.1",
+    "react-bootstrap-table2-filter": "^1.2.0",
+    "react-bootstrap-table2-paginator": "^2.1.0",
+    "react-bootstrap-table2-toolkit": "^2.1.0",
+    "react-bs-datatable": "^2.0.2",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-icons": "^3.8.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "react-select": "^3.0.8",
+    "yarn": "^1.19.1",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
