@@ -26,8 +26,8 @@ router.post('/', async (req, res) => {
         isActive: req.body.isActive,
     }
     var newCategory = new Category(newCategoryProperties);
-    if (req.body.parentCatId) {
-        var parentCategory = await Category.findById(req.body.parentCatId);
+    if (req.body.parentCategoryID) {
+        var parentCategory = await Category.findById(req.body.parentCategoryID);
         newCategory.parent = parentCategory;
     }
     res.send(await newCategory.save())
@@ -43,8 +43,8 @@ router.post('/:id', async (req, res) => {
             exitingCategory[key] = req.body[key];
         }
 
-        if (req.body.parentCatId) {
-            var newParentCategory = await Category.findById(req.body.parentCatId);
+        if (req.body.parentCategoryID) {
+            var newParentCategory = await Category.findById(req.body.parentCategoryID);
             let existingnParentCategory = await exitingCategory.getParent();
             if(existingnParentCategory.id != newParentCategory.id ){
                 exitingCategory.parent = newParentCategory;

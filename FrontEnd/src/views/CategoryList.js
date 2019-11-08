@@ -41,7 +41,7 @@ export default class CategoryList extends Component {
     }
     render() {
         const columns = [
-            {text: 'Name', dataField: 'name', filter: textFilter() },
+            {text: 'Name', dataField: 'name' },
             {text: 'Status', dataField: 'isActive', formatter: val => val ? 'Active' : 'In Active'},
             {text: 'Created At', dataField: 'createdAt'},
             {text: 'Updated At', dataField: 'updatedAt'},
@@ -56,6 +56,7 @@ export default class CategoryList extends Component {
             }
         ]
         const {page, sizePerPage, totalSize} = this.state;
+        const { SearchBar } = Search;
         return (
             <>
                 <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -71,7 +72,8 @@ export default class CategoryList extends Component {
                         toolkitProps => [
                             <SearchBar {...toolkitProps.searchProps} />,
                             <BootstrapTable
-                                remote={{search: true}}
+                                { ...toolkitProps.baseProps }
+                                remote
                                 bootstrap4
                                 striped
                                 hover
